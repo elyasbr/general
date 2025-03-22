@@ -5,8 +5,8 @@ export  class BaseEntity<T > {
    protected properties: T;
    _id : string
    id: string
-  createdAt :Date
-  updatedAt:Date
+   createdAt :Date
+   updatedAt:Date
 
   constructor(properties :T) {
 
@@ -20,10 +20,10 @@ export  class BaseEntity<T > {
   }
 
   setCreatedAt(date : Date ) {
-    this.updatedAt = date
+    this.createdAt = date
   }
   getCreatedAt(): Date {
-    return <Date>this.updatedAt
+    return <Date>this.createdAt
   }
 
   getIdToString() :string {
@@ -36,8 +36,8 @@ export  class BaseEntity<T > {
   getId() :string {
     return <string>this.id
   }
-  setId(ID : string) {
-    this.id =ID
+  setId(id : string) {
+    this.id =id
   }
 
 
