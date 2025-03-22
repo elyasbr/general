@@ -1,7 +1,8 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { IsNumber, IsOptional, Min, ValidateNested } from 'class-validator';
 import { Type } from 'class-transformer';
-import { PublicError } from '@elyasbr/general';
+import { PublicError } from '../exceptions';
+
 
 export class BasePaginationDto {
   @ApiProperty({

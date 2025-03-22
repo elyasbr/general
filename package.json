@@ -1,6 +1,6 @@
 {
   "name": "@elyasbr/general",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Package General",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,6 +16,8 @@
     "@nestjs/mongoose": "^11.0.2",
     "@nestjs/platform-express": "^11.0.1",
     "@nestjs/swagger": "^11.0.7",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
     "fastify": "^5.2.1",
     "mongodb": "^6.15.0",
     "mongoose": "^8.12.2",
