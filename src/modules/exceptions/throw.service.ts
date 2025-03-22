@@ -4,7 +4,7 @@ import { IDuplicateMongo } from './interface/duplicate-error.mongo';
 import { AppError } from './error/app-error';
 
 export class ThrowService {
-  constructor(@Inject('DUPLICATE_CLASS') public readonly secondService: IDuplicateMongo) {
+  constructor(@Inject('DUPLICATE_CLASS') public readonly secondService?: IDuplicateMongo) {
   }
    handler(msg : Error) {
     if (msg.name==AppError.name) {
