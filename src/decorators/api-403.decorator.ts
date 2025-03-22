@@ -26,16 +26,8 @@ export const Api403 = ( ) => {
                         example: 403,
                     },
                     message: {
-                        oneOf: [
-
-                            {
-                                type: 'array',
-                                items: {
-                                    type: 'object',
-                                    $ref: getSchemaPath(Pattern4xErrorDto),
-                                },
-                            },
-                        ],
+                        type: 'object',
+                        $ref: getSchemaPath(Pattern4xErrorDto),
                     } ,
                     timestamp: {
                         type: 'Date',
