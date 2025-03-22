@@ -1,2 +1,6 @@
 export * from "./interface"
-export * from "./"
+export * from "./base-entity.repository"
+export * from "./base-schema"
+export * from "./entity.repository"
+export * from "./entity-schema.factory"
+export * from "./mongoose.module"
