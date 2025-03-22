@@ -10,13 +10,13 @@ export class Base {
     required: true,
     unique : true
   })
-  protected id?: string;
+   id?: string;
 
   @Prop({ type: Date, default: Date.now })
-  protected createdAt?: Date;
+   createdAt?: Date;
 
   @Prop({ type: Date, default: Date.now })
-  protected updateAt?: Date;
+   updateAt?: Date;
 }
 
 export const BaseSchema = SchemaFactory.createForClass(Base);
