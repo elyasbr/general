@@ -26,16 +26,8 @@ export const Api404 = ( ) => {
                         example: 404,
                     },
                     message: {
-                        oneOf: [
-
-                            {
-                                type: 'array',
-                                items: {
-                                    type: 'object',
-                                    $ref: getSchemaPath(Pattern4xErrorDto),
-                                },
-                            },
-                        ],
+                        type: 'object',
+                        $ref: getSchemaPath(Pattern4xErrorDto),
                     } ,
                     timestamp: {
                         type: 'Date',
