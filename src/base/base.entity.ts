@@ -1,34 +1,46 @@
-import { Base } from '../modules/mongoose/base-schema';
+import { Base } from '../modules';
 
 
-export  class BaseEntity<T > extends Base{
+export  class BaseEntity<T > {
    protected properties: T;
    _id : string
+   id: string
+  createdAt :Date
+  updatedAt:Date
 
   constructor(properties :T) {
-    super();
+
     this.properties = properties;
   }
-
-  getUpdateAt(): Date {
-    return <Date>this.updateAt
+  setUpdatedAt(date : Date ) {
+     this.updatedAt = date
+  }
+  getUpdatedAt(): Date {
+    return <Date>this.updatedAt
   }
 
-
+  setCreatedAt(date : Date ) {
+    this.updatedAt = date
+  }
+  getCreatedAt(): Date {
+    return <Date>this.updatedAt
+  }
 
   getIdToString() :string {
     return <string>this._id.toString()
   }
-  getID() :string {
-    return <string>this.id
-  }
-  setID(ID : string) {
-    this.id =ID
-  }
-
   setIdObject(_id : string){
     this._id=_id
   }
+
+  getId() :string {
+    return <string>this.id
+  }
+  setId(ID : string) {
+    this.id =ID
+  }
+
+
   getProperty<K extends keyof T>(key: K): T[K] {
     return this.properties[key];
   }
