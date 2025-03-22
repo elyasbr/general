@@ -1,6 +1,6 @@
 import { HttpStatus, applyDecorators } from '@nestjs/common';
 import { ApiExtraModels, ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
-import { PaginateDto } from './dtos/paginate.dto';
+import { PaginateDto } from '../dtos';
 
 
 export const Api201Array = (resultDto: any) => {
