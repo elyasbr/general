@@ -26,7 +26,7 @@ export  class BaseEntity<T > {
     return <Date>this.createdAt
   }
 
-  getIdToString() :string {
+  getIdObject() :string {
     return <string>this._id.toString()
   }
   setIdObject(_id : string){
