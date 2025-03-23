@@ -1,6 +1,10 @@
 import { ICommand, IQuery } from '@nestjs/cqrs';
+import { Api400, Api403, Api404, Api409 } from '../decorators';
 
-
+@Api400()
+@Api403()
+@Api404()
+@Api409()
 export class CqrsFactory<T > {
 
   constructor( private readonly commandFactory: T ) {
