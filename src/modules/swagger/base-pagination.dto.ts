@@ -9,10 +9,10 @@ export class BasePaginationDto {
     default : 1
   })
   @IsNumber({} ,{
-   message : PublicError.PAGE_FIELD_PAGINATION_IS_REQUIRED.toString()
+   message : PublicError.PAGE_REQUIRED.toString()
   })
   @Min( 1, {
-    message : PublicError.MIN_VALUE_PAGE_FIELD_PAGINATION_IS_REQUIRED.toString()
+    message : PublicError.MIN_VALUE_PAGE_REQUIRED.toString()
 
   })
   page: number; // شماره صفحه
@@ -21,11 +21,11 @@ export class BasePaginationDto {
     default: 10
   })
   @IsNumber({} ,{
-    message : PublicError.LIMIT_FIELD_PAGINATION_IS_REQUIRED.toString()
+    message : PublicError.LIMIT_REQUIRED.toString()
 
   })
   @Min(5 ,{
-    message : PublicError.MIN_VALUE_LIMIT_FIELD_PAGINATION_IS_REQUIRED.toString()
+    message : PublicError.MIN_VALUE_LIMIT_REQUIRED.toString()
 
   })
   limit: number; // تعداد نتایج در هر صفحه
