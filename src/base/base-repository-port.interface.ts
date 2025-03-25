@@ -13,6 +13,6 @@ export interface IBaseRepositoryPort<TGet , TPaginate ,TFilter ,TSort,TSchema ex
    getPagination(page : number , limit :number ,filter : TFilter , sort :TSort ) :Promise<PaginateDto<TPaginate>>
    getArray(filter : TFilter , sort :TSort ) : Promise<IPaginate<TEntity>>
    getArrayWithPage(page : number , limit : number ,filter : TFilter , sort :TSort ) : Promise<IPaginate<TEntity>>
-   getOneByIdAndDelete(mimeTypeId : string):Promise<boolean>
+   getOneByIdAndDelete(mimeTypeId : string):Promise<TEntity>
 
 }
