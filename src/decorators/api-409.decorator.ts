@@ -1,40 +1,33 @@
-import { HttpStatus, applyDecorators } from '@nestjs/common';
+import { applyDecorators } from '@nestjs/common';
 import {
-    ApiBadRequestResponse,
-    ApiConflictResponse,
     ApiExtraModels,
-    ApiOkResponse,
+    ApiConflictResponse,
     getSchemaPath,
 } from '@nestjs/swagger';
 import { Pattern4xErrorDto } from '../dtos/pattern-4x-error.dto';
 
-
-
-
-
-
-export const Api409 = ( ) => {
+export const Api409 = () => {
     return applyDecorators(
-        ApiExtraModels( Pattern4xErrorDto ),
-        ApiConflictResponse({
-            description: 'Conflict Response',
-            schema: {
-                type: 'object',
-                properties: {
-                    statusCode: {
-                        type: 'number',
-                        example: 409,
-                    },
-                    message: {
-                        type: 'object',
-                        $ref: getSchemaPath(Pattern4xErrorDto),
-                    } ,
-                    timestamp: {
-                        type: 'Date',
-                        example: new Date(),
-                    },
-                },
-            },
-        }),
+      ApiExtraModels(Pattern4xErrorDto),
+      ApiConflictResponse({
+          description: 'Conflict Response',
+          schema: {
+              type: 'object',
+              properties: {
+                  statusCode: {
+                      type: 'number',
+                      example: 409,
+                  },
+                  message: {
+                      allOf: [{ $ref: getSchemaPath(Pattern4xErrorDto) }],
+                  },
+                  timestamp: {
+                      type: 'string',
+                      format: 'date-time',
+                      example: new Date().toISOString(),
+                  },
+              },
+          },
+      }),
     );
 };
