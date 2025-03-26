@@ -8,15 +8,10 @@ import {
 } from '@nestjs/swagger';
 import { Pattern4xErrorDto } from '../dtos/pattern-4x-error.dto';
 
-
-
-
-
-
 export const Api403 = ( ) => {
     return applyDecorators(
         ApiExtraModels( Pattern4xErrorDto ),
-        ApiForbiddenResponse({
+        ApiBadRequestResponse({
             description: 'Forbidden Response',
             schema: {
                 type: 'object',
