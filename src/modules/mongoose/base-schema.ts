@@ -20,9 +20,7 @@ export class Base {
 
 export const BaseSchema = SchemaFactory.createForClass(Base);
 
-BaseSchema.pre('save', function(next) {
-  console.log("------------ id ----------------------");
-  console.log(this.id);
+BaseSchema.pre<Base>('save', function (next) {
   this.id = uuidv4();
   next();
 });
