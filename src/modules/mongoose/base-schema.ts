@@ -7,7 +7,8 @@ export class Base {
   @Prop({
     type: String,
     required: true,
-    unique : true
+    unique : true ,
+    default: () => uuidv4(),
   })
    id?: string;
 
@@ -20,7 +21,7 @@ export class Base {
 
 export const BaseSchema = SchemaFactory.createForClass(Base);
 
-BaseSchema.pre<Base>('save', function (next) {
-  this.id = uuidv4();
-  next();
-});
+// BaseSchema.pre<Base>('save', function (next) {
+//   this.id = uuidv4();
+//   next();
+// });
