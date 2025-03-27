@@ -30,7 +30,7 @@ export abstract class EntityRepository<
     const entityDocument = new this.entityModelWrite(this.entitySchemaFactory.toSchema(entity));
     console.log("---------------------to schema ---------------------------")
     console.log(entityDocument);
-    const res = await entityDocument.save({session});
+    const res = await entityDocument.save();
     return this.entitySchemaFactory.toEntity(res);
   }
 
