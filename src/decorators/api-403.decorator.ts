@@ -18,9 +18,9 @@ export const Api403 = () => {
                       type: 'number',
                       example: 403,
                   },
-                  // message: {
-                  //     allOf: [{ $ref: getSchemaPath(Pattern4xErrorDto) }],
-                  // },
+                  message: {
+                      allOf: [{ $ref: getSchemaPath(Pattern4xErrorDto) }],
+                  },
                   timestamp: {
                       type: 'string',
                       format: 'date-time',
