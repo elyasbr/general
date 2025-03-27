@@ -6,11 +6,13 @@ import { TypeErrorCode } from '../enums/error-type.enum';
 
 export class AppError extends Error {
   httpCode : HttpStatus
-  constructor(error : string , errorType? : TypeErrorCode) {
+  userId : string
+  constructor(error : string , errorType? : TypeErrorCode , userId? : string) {
     super();
     this.name = this.constructor.name;
     this.message =error
     this.httpCode=HttpStatus.NOT_FOUND
+    this.userId=userId
     switch (errorType) {
       case TypeErrorCode.DUPLICATED_ERROR :
         this.httpCode = HttpStatus.CONFLICT;
