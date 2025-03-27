@@ -28,6 +28,8 @@ export abstract class EntityRepository<
 
   protected async create(entity: TEntity  , session?: ClientSession,): Promise<TEntity> {
     const entityDocument = new this.entityModelWrite(this.entitySchemaFactory.toSchema(entity));
+    console.log("---------------------to schema ---------------------------")
+    console.log(entityDocument);
     const res = await entityDocument.save({session});
     return this.entitySchemaFactory.toEntity(entityDocument);
   }
