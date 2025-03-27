@@ -31,7 +31,7 @@ export abstract class EntityRepository<
     console.log("---------------------to schema ---------------------------")
     console.log(entityDocument);
     const res = await entityDocument.save({session});
-    return this.entitySchemaFactory.toEntity(entityDocument);
+    return this.entitySchemaFactory.toEntity(res);
   }
 
   protected async findOne(

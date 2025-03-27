@@ -1,12 +1,11 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { v4 as uuidv4 } from 'uuid'; // برای تولید UUID نسخه 4
+import { v4 as uuidv4 } from 'uuid';
 
 @Schema({ timestamps: {createdAt : "createdAt" , updatedAt : "updateAt"} })
 export class Base {
 
   @Prop({
     type: String,
-    default: uuidv4(), // تولید خودکار UUID نسخه 4
     required: true,
     unique : true
   })
