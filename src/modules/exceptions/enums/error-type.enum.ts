@@ -4,6 +4,7 @@ export enum TypeErrorCode {
   ForBIDDEN ="ForBIDDEN" ,
   UNAUTHORIZE = "UNAUTHORIZE" ,
   SERVICE_DISABLE="SERVICE_DISABLE" ,
+  Error_DISABLE="SERVICE_DISABLE" ,
 
 
 }

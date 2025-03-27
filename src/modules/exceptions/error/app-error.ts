@@ -27,6 +27,9 @@ export class AppError extends Error {
       case TypeErrorCode.SERVICE_DISABLE :
         this.httpCode = HttpStatus.SERVICE_UNAVAILABLE;
         break
+      case TypeErrorCode.Error_DISABLE :
+        this.httpCode = HttpStatus.EXPECTATION_FAILED;
+        break
       default:
         this.httpCode = HttpStatus.NOT_FOUND;
         break
