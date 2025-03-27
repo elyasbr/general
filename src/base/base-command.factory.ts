@@ -7,6 +7,8 @@ export abstract  class   BaseCommandFactory<TCreateDto , TUpdateDto , TFilter , 
   abstract deleteCommand(ID : string) :ICommand
   abstract getQuery(ID : string) :IQuery
   abstract paginationQuery(page : number , limit : number , filter :TFilter , sort : TSort) :IQuery
+  abstract paginationFromParentQuery(parentId : string ,page : number , limit : number , filter :TFilter , sort : TSort) :IQuery
+
 
 
 }
