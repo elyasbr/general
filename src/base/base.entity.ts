@@ -37,7 +37,7 @@ export  class BaseEntity<T > {
     return <string>this.id
   }
   setId(id : string) {
-    this.id =id
+    this.id =
   }
 
 
