@@ -1,12 +1,12 @@
 import { HttpStatus, applyDecorators } from '@nestjs/common';
-import { ApiExtraModels, ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
+import { ApiCreatedResponse, ApiExtraModels, ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
 import { PaginateDto } from '../dtos';
 
 
 export const Api201Array = (resultDto: any) => {
     return applyDecorators(
       ApiExtraModels(PaginateDto, resultDto),
-      ApiOkResponse({
+      ApiCreatedResponse({
           description: 'FindOne Response',
           schema: {
               type: 'object',
