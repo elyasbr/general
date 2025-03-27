@@ -19,7 +19,7 @@ export const Api409 = () => {
                       example: 409,
                   },
                   message: {
-                      allOf: [{ $ref: getSchemaPath(Pattern4xErrorDto) }],
+                      $ref: getSchemaPath(Pattern4xErrorDto),
                   },
                   timestamp: {
                       type: 'string',

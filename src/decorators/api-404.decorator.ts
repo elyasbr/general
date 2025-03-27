@@ -19,7 +19,7 @@ export const Api404 = () => {
                       example: 404,
                   },
                   message: {
-                      allOf: [{ $ref: getSchemaPath(Pattern4xErrorDto) }],
+                      $ref: getSchemaPath(Pattern4xErrorDto),
                   },
                   timestamp: {
                       type: 'string',
