@@ -31,5 +31,8 @@ export class CqrsFactory<T > {
     const {page , limit , filter , sort } = data
     return (this.commandFactory as any).paginationQuery(page , limit , filter , sort )
   }
-
+  public   paginationQuery1( data: any) :IQuery {
+    const {page , limit , filter , sort } = data
+    return (this.commandFactory as any).paginationQuery(page , limit , filter , sort )
+  }
 }
