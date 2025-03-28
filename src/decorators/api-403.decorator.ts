@@ -19,6 +19,7 @@ export const Api403 = () => {
                       example: 403,
                   },
                   message: {
+                      type: 'object',
                       $ref: getSchemaPath(Pattern4xErrorDto),
                   },
                   timestamp: {
