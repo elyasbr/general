@@ -10,7 +10,7 @@ export interface  IMetaDataEvent<T extends ICommand | IQuery = ICommand | IQuery
   aggregateRootId : string
   parentServiceName : string
   param : T
-  createAction : Date
+  createAction : number
   events? : IEventMeta
 
 
