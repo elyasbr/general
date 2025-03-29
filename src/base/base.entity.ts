@@ -3,13 +3,14 @@ import {v7 as uuidv7} from "uuid"
 
 export  class BaseEntity<T > {
    protected properties: T;
+   ID : string
    _id : string
    id: string
    createdAt :Date
    updatedAt:Date
 
   constructor(properties :T) {
-    this.setId()
+    this.setID()
     this.properties = properties;
   }
   setUpdatedAt(date : Date ) {
@@ -36,8 +37,8 @@ export  class BaseEntity<T > {
   getId() :string {
     return <string>this.id
   }
-  setId() {
-    this.id = uuidv7({})
+  setId(id : string) {
+    this.id = id
   }
 
 
@@ -47,6 +48,12 @@ export  class BaseEntity<T > {
 
   setProperty<K extends keyof T>(key: K, value: T[K]): void {
     this.properties[key] = value;
+  }
+  setID():void {
+     this.id = uuidv7()
+  }
+  getID(){
+     return this.ID;
   }
 
 }
