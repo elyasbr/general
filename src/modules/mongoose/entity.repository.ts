@@ -82,7 +82,7 @@ export abstract class EntityRepository<
   }
 
   protected async startSession(): Promise<ClientSession> {
-    const session = await this.entityModelRead.db.startSession();
+    const session = await this.entityModelWrite.db.startSession();
     session.startTransaction(); // آغاز تراکنش
     return session;
   }
