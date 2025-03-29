@@ -8,7 +8,7 @@ export  class BaseEntity<T > {
    id: string
    createdAt :Date
    updatedAt:Date
-  metaData : IMetaDataEvent
+  metaData : IMetaDataEvent<any>
 
   constructor(properties :T) {
     this.properties = properties;
@@ -49,11 +49,11 @@ export  class BaseEntity<T > {
   setProperty<K extends keyof T>(key: K, value: T[K]): void {
     this.properties[key] = value;
   }
-  setMetaData(metaData :IMetaDataEvent) {
+  setMetaData(metaData :IMetaDataEvent<any>) {
      this.metaData=metaData
   }
 
-  getMetaData() : IMetaDataEvent {
+  getMetaData<TEvent>() : IMetaDataEvent<TEvent> {
      return this.metaData
   }
 
