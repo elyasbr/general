@@ -1,5 +1,6 @@
 import { Base } from '../modules';
 import {v7 as uuidv7} from "uuid"
+import { IMetaDataEvent } from '../interface';
 
 export  class BaseEntity<T > {
    protected properties: T;
@@ -7,6 +8,7 @@ export  class BaseEntity<T > {
    id: string
    createdAt :Date
    updatedAt:Date
+  metaData : IMetaDataEvent
 
   constructor(properties :T) {
     this.properties = properties;
@@ -46,6 +48,13 @@ export  class BaseEntity<T > {
 
   setProperty<K extends keyof T>(key: K, value: T[K]): void {
     this.properties[key] = value;
+  }
+  setMetaData(metaData :IMetaDataEvent) {
+     this.metaData=metaData
+  }
+
+  getMetaData() : IMetaDataEvent {
+     return this.metaData
   }
 
 
