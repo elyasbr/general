@@ -1,9 +1,9 @@
-import { ICommand, IQuery } from '@nestjs/cqrs';
+import { IEvent } from '@nestjs/cqrs';
 export interface IEventMeta {
   createAction : number
-  param : ICommand | IQuery
+  param : IEvent
 }
-export interface  IMetaDataEvent<T extends ICommand | IQuery = ICommand | IQuery> {
+export interface  IMetaDataEvent<T extends IEvent > {
   userId? : string
   ip? : string
   userAgent? : string
