@@ -7,4 +7,4 @@ export  * from  './api-400.decorator'
 export  * from  './api-403.decorator'
 export  * from  './api-404.decorator'
 export  * from  './api-409.decorator'
-
+export  * from  './service.decorator'

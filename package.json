@@ -1,6 +1,6 @@
 {
   "name": "@elyasbr/general",
-  "version": "1.0.74",
+  "version": "1.0.75",
   "description": "Package General",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
