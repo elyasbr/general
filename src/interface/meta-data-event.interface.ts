@@ -1,6 +1,5 @@
 import { ICommand, IQuery } from '@nestjs/cqrs';
 export interface IEventMeta {
-  serviceName : string
   createAction : Date
   param : ICommand | IQuery
 }
