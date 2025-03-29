@@ -1,11 +1,7 @@
 import { ICommand, IEvent, IQuery } from '@nestjs/cqrs';
-export interface IEventMeta<TEvent extends IEvent> {
-  createAction : number
-  param : TEvent
-}
+
 export interface  IMetaDataEvent<
-  T extends ICommand | IQuery = ICommand | IQuery ,
-  TEvent extends IEvent = IEvent
+  T extends ICommand | IQuery = ICommand | IQuery
 > {
   userId? : string
   ip? : string
@@ -14,7 +10,5 @@ export interface  IMetaDataEvent<
   parentServiceName : string
   param : T
   createAction : number
-  events? : IEventMeta<TEvent>
-
 
 }
