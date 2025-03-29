@@ -28,8 +28,6 @@ export abstract class EntityRepository<
 
   protected async create(entity: TEntity  , session?: ClientSession,): Promise<TEntity> {
     const entityDocument = new this.entityModelWrite(this.entitySchemaFactory.toSchema(entity));
-    console.log("---------------------to schema ---------------------------")
-    console.log(entityDocument);
     const res = await entityDocument.save({session});
     return this.entitySchemaFactory.toEntity(res);
   }
@@ -60,8 +58,6 @@ export abstract class EntityRepository<
   ): Promise<TEntity | null> {
     const filter = entityFilterQuery || {};
     const queryOptions: QueryOptions<TSchemaWrite> = options ? { ...options, lean: true } : { lean: true };
-    console.log("------------------------------- filter -----------------------------------");
-    console.log(filter);
     const entity = await this.entityModelWrite.findOneAndDelete(filter, queryOptions).exec();
     return entity ? this.entitySchemaFactory.toEntity(entity) : null;
   }
