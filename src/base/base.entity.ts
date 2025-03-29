@@ -1,5 +1,5 @@
 import { Base } from '../modules';
-
+import {v7 as uuidv7} from "uuid"
 
 export  class BaseEntity<T > {
    protected properties: T;
@@ -9,7 +9,7 @@ export  class BaseEntity<T > {
    updatedAt:Date
 
   constructor(properties :T) {
-
+    this.setId()
     this.properties = properties;
   }
   setUpdatedAt(date : Date ) {
@@ -36,8 +36,8 @@ export  class BaseEntity<T > {
   getId() :string {
     return <string>this.id
   }
-  setId(id : string) {
-    this.id =id
+  setId() {
+    this.id = uuidv7({})
   }
 
 
