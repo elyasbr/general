@@ -1,5 +1,5 @@
 import { AggregateRoot } from '@nestjs/cqrs';
-import { v4 as uuidv4 } from 'uuid';
+import { v7 as uuidv4 } from 'uuid';
 
 export abstract class BaseAggregate<TEntity> extends AggregateRoot{
   private readonly _ID: string;
@@ -9,7 +9,7 @@ export abstract class BaseAggregate<TEntity> extends AggregateRoot{
      this._ID = uuidv4();
      this._state=state
   }
-  get id(): string {
+  get ID(): string {
     return this._ID;
   }
   getState() :TEntity {
