@@ -20,6 +20,7 @@ export class AppExceptionFilter implements ExceptionFilter {
     const response = ctx.getResponse<FastifyReply>();
     const request: Request = ctx.getRequest<Request>();
     const url = request.headers['referer'] || 'No Referer';
+    console.log("status code = " , <number>exception.httpCode)
     response.status(<number>exception.httpCode).send({
       statusCode :  <number>exception.httpCode ,
       message : JSON.parse(exception.message),

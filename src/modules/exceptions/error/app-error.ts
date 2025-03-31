@@ -35,10 +35,9 @@ export class AppError extends Error {
       case TypeErrorCode.BAD_REQUEST :
         this.httpCode = HttpStatus.BAD_REQUEST;
         break
-      default:
-        this.httpCode = HttpStatus.NOT_FOUND;
-        break
     }
+
+    console.log("app errr = ",this.httpCode)
   }
 }
 
