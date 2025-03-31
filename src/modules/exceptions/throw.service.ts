@@ -9,8 +9,9 @@ export class ThrowService {
     @Inject('DUPLICATE_CLASS') public readonly secondService?: IDuplicateMongo,
   ) {}
   handler(msg: Error) {
+
     if (msg.name == AppError.name) {
-      throw new AppError(msg.message, msg['httpCode']);
+      throw new AppError(msg.message, msg['typeError']);
     }
     if (msg.name == 'MongoServerError') {
       const msg1: MongoServerError = <MongoServerError>msg;

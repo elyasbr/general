@@ -6,6 +6,7 @@ import { TypeErrorCode } from '../enums/error-type.enum';
 
 export class AppError extends Error {
   httpCode : HttpStatus
+  typeError : TypeErrorCode
   userId : string
   constructor(error : string , errorType? : TypeErrorCode , userId? : string) {
     super();
@@ -13,6 +14,7 @@ export class AppError extends Error {
     this.message =error
     this.httpCode=HttpStatus.NOT_FOUND
     this.userId=userId
+    this.typeError=errorType
     switch (errorType) {
       case TypeErrorCode.DUPLICATED_ERROR :
         this.httpCode = HttpStatus.CONFLICT;
