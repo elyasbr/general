@@ -32,8 +32,8 @@ export abstract class BaseEntityRepository<
                      options?: QueryOptions<TSchemaRead>,): Promise<TEntity | null> {
     return this.findOne( entityFilterQuery, projection , options)
   }
-  async getOneDelete(   entityFilterQuery?: FilterQuery<TSchemaRead>,
-                      options?: QueryOptions<TSchemaRead>,):  Promise<TEntity | null> {
+  async getOneDelete(   entityFilterQuery?: FilterQuery<TSchemaWrite>,
+                      options?: QueryOptions<TSchemaWrite>,):  Promise<TEntity | null> {
     return this.findOneAndDelete( entityFilterQuery , options)
   }
 

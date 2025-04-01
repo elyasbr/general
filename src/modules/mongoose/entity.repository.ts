@@ -54,10 +54,17 @@ export abstract class EntityRepository<
 
   protected async findOneAndDelete(
     entityFilterQuery?: FilterQuery<TSchemaWrite>,
-    options?: QueryOptions<TSchemaWrite>,
+    options?: QueryOptions<TSchemaWrite>
   ): Promise<TEntity | null> {
     const filter = entityFilterQuery || {};
-    const queryOptions: QueryOptions<TSchemaWrite> = options ? { ...options, lean: true } : { lean: true };
+
+    // بررسی کن که `session` داخل `options` باشد
+    const queryOptions: QueryOptions<TSchemaWrite> = {
+      ...options,
+      lean: true,
+      session: options?.session, // ✅ اطمینان از ارسال صحیح session
+    };
+
     const entity = await this.entityModelWrite.findOneAndDelete(filter, queryOptions).exec();
     return entity ? this.entitySchemaFactory.toEntity(entity) : null;
   }
