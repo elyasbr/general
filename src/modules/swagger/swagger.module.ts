@@ -8,7 +8,7 @@ export class SwaggerModuleConfig {
     let final:Array<string>=[]
     const documentVersion1="docs/version1"
     final = final.concat([documentVersion1 ])
-    const configV1 = SwaggerConfig.createConfigDevelope("CDN" ,'1.0' , port);
+    const configV1 = SwaggerConfig.createConfigDevelope("CDN" ,'1.0' );
     const documentV1 = SwaggerModule.createDocument(app, configV1 ,);
     SwaggerModule.setup(documentVersion1, app, documentV1, SwaggerConfig.createCustomOptions());
     return final
