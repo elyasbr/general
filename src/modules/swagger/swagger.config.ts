@@ -1,11 +1,11 @@
 import { DocumentBuilder, SwaggerCustomOptions } from '@nestjs/swagger';
 
 export class SwaggerConfig {
-  static createConfigDevelope(title:string ,version: string) {
+  static createConfigDevelope(title:string ,version: string , port: number) {
     return  new DocumentBuilder()
       .setTitle(title)
       .setVersion(version)
-      .addServer('http://localhost:3000/', 'Local environment' )
+      .addServer(`http://localhost:${port}/`, 'Local environment' )
       .addTag('Your API Tag')
       .addBearerAuth(
         {
