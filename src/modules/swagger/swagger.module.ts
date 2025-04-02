@@ -4,7 +4,7 @@ import { SwaggerConfig } from './swagger.config';
 
 @Module({})
 export class SwaggerModuleConfig {
-  static setup(app: INestApplication , port : number) :Array<string> {
+  static setup(app: INestApplication ) :Array<string> {
     let final:Array<string>=[]
     const documentVersion1="docs/version1"
     final = final.concat([documentVersion1 ])
