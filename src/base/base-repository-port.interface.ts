@@ -9,7 +9,7 @@ export interface IBaseRepositoryPort<TGet , TPaginate ,TFilter ,TSort,TSchema ex
    commitTransaction(session : ClientSession) : Promise<void>
    create(mimeType: TEntity): Promise<TEntity>;
    getOneById(mimeTypeId : string): Promise<TEntity | null>;
-   getOneByIdAndUpdate(mimeTypeId : string , mimeType: TEntity): Promise<TEntity>;
+   getOneByIdAndUpdate(mimeTypeId : string , mimeType: TEntity , session? : ClientSession): Promise<TEntity>;
    getPagination(page : number , limit :number ,filter : TFilter , sort :TSort ) :Promise<PaginateDto<TPaginate>>
    getArray(filter : TFilter , sort :TSort ) : Promise<IPaginate<TEntity>>
    getArrayWithPage(page : number , limit : number ,filter : TFilter , sort :TSort ) : Promise<IPaginate<TEntity>>
