@@ -1,4 +1,4 @@
-import { UnitEnum } from './unit.enum';
+import { EUnit } from './unit.enum';
 
 export function EStringRequired(filed: string , section:string): string {
   return `${filed}_FIELD_${section}_IS_STRING_REQUIRED`
@@ -42,7 +42,7 @@ export function EFieldValidate(field : string , section : string) {
   return `${field}_VALUE_${section}_NOT_VALIDATE`
 }
 
-export function EFieldBetweenValidate(field : string , section : string , from:number , to : number , unit:UnitEnum) {
+export function EFieldBetweenValidate(field : string , section : string , from:number , to : number , unit:EUnit) {
   return `${field}_VALUE_${section}_MUST_BETWEEN_${from}${unit}_AND_${to}${unit}`
 }
 
