@@ -6,7 +6,5 @@ export enum TypeErrorCode {
   SERVICE_DISABLE = "SERVICE_DISABLE",
   Error_DISABLE = "SERVICE_DISABLE" ,
   BAD_REQUEST = "BAD_REQUEST",
-
-
 }
 

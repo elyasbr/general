@@ -1,3 +1,4 @@
+export * from './enums/error-type.enum';
 export * from './error/public.error';
 export * from './error/app-error'
 export * from './filter/validation-dto-exception.filter'
