@@ -1,9 +1,10 @@
 import { HttpStatus, applyDecorators } from '@nestjs/common';
 import { ApiCreatedResponse, ApiExtraModels, ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
-import { PaginateDto } from '../dtos';
+import { PageMetaDto, PaginateDto } from '../../dtos';
 
 
-export const Api201Array = (resultDto: any) => {
+
+export const Api201Pagination = (resultDto: any) => {
     return applyDecorators(
       ApiExtraModels(PaginateDto, resultDto),
       ApiCreatedResponse({
@@ -16,10 +17,18 @@ export const Api201Array = (resultDto: any) => {
                       example: HttpStatus.CREATED,
                   },
                   result: {
-                      type: 'array',
-                      items: {
-                          $ref: getSchemaPath(resultDto),
-                      }
+                      type: 'object',
+                      properties: {
+                          data: {
+                              type: 'array',
+                              items: {
+                                  $ref: getSchemaPath(resultDto),
+                              },
+                          },
+                          metaData: {
+                              $ref: getSchemaPath(PageMetaDto),
+                          },
+                      },
                   },
                   timestamp: {
                       type: 'string',

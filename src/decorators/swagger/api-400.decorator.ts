@@ -1,6 +1,6 @@
 import { HttpStatus, applyDecorators } from '@nestjs/common';
 import { ApiBadRequestResponse, ApiExtraModels, ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
-import { Pattern4xErrorDto } from '../dtos/pattern-4x-error.dto';
+import { Pattern4xErrorDto } from '../../dtos/pattern-4x-error.dto';
 export const Api400 = ( ) => {
     return applyDecorators(
         ApiExtraModels( Pattern4xErrorDto ),

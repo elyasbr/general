@@ -4,7 +4,7 @@ import {
     ApiNotFoundResponse,
     getSchemaPath,
 } from '@nestjs/swagger';
-import { Pattern4xErrorDto } from '../dtos/pattern-4x-error.dto';
+import { Pattern4xErrorDto } from '../../dtos/pattern-4x-error.dto';
 
 export const Api404 = () => {
     return applyDecorators(
