@@ -1,4 +1,4 @@
-export enum UnitEnum {
+export enum EUnit {
  SECOND="SECOND",
  BYTE="BYTE",
  KB="KB",
