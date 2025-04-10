@@ -1,6 +1,6 @@
 {
   "name": "@elyasbr/general",
-  "version": "1.0.92",
+  "version": "1.0.93",
   "description": "Package General",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,6 +13,7 @@
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.12",
     "@nestjs/cqrs": "^11.0.3",
+    "@nestjs/microservices": "^11.0.15",
     "@nestjs/mongoose": "^11.0.3",
     "@nestjs/swagger": "^11.1.0",
     "class-transformer": "^0.5.1",
