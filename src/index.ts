@@ -4,3 +4,4 @@ export * from './interceptors/response.interceptor';
 export * from './dtos';
 export * from './base';
 export * from './interface/meta-data-event.interface';
+export * from './helper';
