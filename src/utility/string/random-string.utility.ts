@@ -7,10 +7,8 @@ export class SecureRandomKeyGenerator {
       throw new Error('Length should be at least 16 characters to include timestamp.');
     }
 
-    // دریافت تایم‌استمپ فعلی (در میلی‌ثانیه)
-    const timestamp = Date.now().toString(36); // تبدیل تایم‌استمپ به سیستم عددی 36 (حروف و اعداد)
+    const timestamp = Date.now().toString(36);
 
-    // تعداد کاراکترهایی که باید از رشته تصادفی تولید شوند
     const remainingLength = length - timestamp.length;
 
     // تولید رشته تصادفی با استفاده از randomstring
@@ -18,15 +16,19 @@ export class SecureRandomKeyGenerator {
       length: remainingLength,
       charset: 'alphabetic+numeric+symbols', // شامل حروف، اعداد و علائم خاص
     });
-
-    // ترکیب تایم‌استمپ با رشته تصادفی
     const combinedString = timestamp + randomString;
-
-    // شفل کردن رشته برای تصادفی‌تر بودن
     return this.shuffleString(combinedString);
   }
-
-  // شفل کردن رشته
+  public static generateNumberRandom(length: number = 6): string {
+    if (length < 6) {
+      throw new Error('Length should be at least 16 characters to include timestamp.');
+    }
+    const randomString = randomstring.generate({
+      length: length,
+      charset: 'numeric'
+    });
+    return this.shuffleString(randomString);
+  }
   private static shuffleString(str: string): string {
     const arr = str.split('');
     for (let i = arr.length - 1; i > 0; i--) {
