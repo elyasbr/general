@@ -1,7 +1,7 @@
 
 import { AppError, PublicError, TypeErrorCode } from '../modules';
 
-export class TimestampVO {
+export class VTimestamp {
   private readonly timestamp: number;
 
   constructor(timestamp?: number) {
@@ -27,7 +27,7 @@ export class TimestampVO {
   }
 
   // مقایسه دو timestamp
-  equals(other: TimestampVO): boolean {
+  equals(other: VTimestamp): boolean {
     return this.timestamp === other.getTimestamp();
   }
 
