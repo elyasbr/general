@@ -6,8 +6,8 @@ import { TypeErrorCode } from '../enums/error-type.enum';
 
 export class AppError extends Error {
   httpCode : HttpStatus
-  typeError : TypeErrorCode
-  userId : string
+  typeError? : TypeErrorCode
+  userId? : string
   constructor(error : string , errorType? : TypeErrorCode , userId? : string) {
     super();
     this.name = this.constructor.name;
