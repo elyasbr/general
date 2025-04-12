@@ -20,6 +20,10 @@ export class VTimestamp {
     return this.timestamp;
   }
 
+  getDate() : Date {
+    return new Date(this.timestamp)
+  }
+
   // بررسی معتبر بودن timestamp
   private isValidTimestamp(timestamp: number): boolean {
     const unixEpoch = new Date('1970-01-01T00:00:00Z').getTime();
