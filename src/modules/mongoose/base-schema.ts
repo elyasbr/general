@@ -16,7 +16,7 @@ export class Base {
    createdAt?: Date;
 
   @Prop({ type: Date, default: Date.now })
-   updateAt?: Date;
+   updatedAt?: Date;
 }
 
 export const BaseSchema = SchemaFactory.createForClass(Base);
