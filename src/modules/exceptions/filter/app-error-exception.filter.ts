@@ -20,11 +20,22 @@ export class AppExceptionFilter implements ExceptionFilter {
     const response = ctx.getResponse<FastifyReply>();
     const request: Request = ctx.getRequest<Request>();
     const url = request.headers['referer'] || 'No Referer';
+    const statusCode =<number>exception.httpCode
     console.log("status code = " , <number>exception.httpCode)
-    response.status(<number>exception.httpCode).send({
-      statusCode :  <number>exception.httpCode ,
-      message : JSON.parse(exception.message),
-      timestamp: new Date().toISOString(),
-    });
+    if (statusCode==401) {
+      console.log("401")
+      response.status(<number>exception.httpCode).send({
+        statusCode :  <number>exception.httpCode ,
+        timestamp: new Date().toISOString(),
+      });
+    } else  {
+      console.log("901")
+      response.status(<number>exception.httpCode).send({
+        statusCode :  <number>exception.httpCode ,
+        message : JSON.parse(exception.message),
+        timestamp: new Date().toISOString(),
+      });
+    }
+
   }
 }
