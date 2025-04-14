@@ -13,6 +13,7 @@ const PublicErrorKeys = Object.freeze({
   PATTERN_FILTER_CONTAIN_PATTERN :  "FILTER_FILED_PAGINATION_SHOULD_BE_CONTAIN_PATTERN" ,
   PATTERN_UUID_WRONG : "PATTER_UUID_IS_WRONG" ,
   TIME_STAMPS_PUBLIC_VALIDATE : EFieldValidate("TIME_STAMPS" , section),
+  PATTERN_USER_ID_WRONG: EPatternUUIDWrong("USER_ID" , section)
 } as const);
 
 // ایجاد نوع برای کلیدهای شیء MimeTypeErrorKeys
