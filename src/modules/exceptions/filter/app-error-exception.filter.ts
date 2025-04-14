@@ -21,7 +21,6 @@ export class AppExceptionFilter implements ExceptionFilter {
     const request: Request = ctx.getRequest<Request>();
     const url = request.headers['referer'] || 'No Referer';
     const statusCode =<number>exception.httpCode
-    console.log("status code = " , <number>exception.httpCode)
     if (statusCode==401) {
       response.status(<number>exception.httpCode).send({
         statusCode :  <number>exception.httpCode ,

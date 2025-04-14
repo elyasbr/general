@@ -38,8 +38,7 @@ export class AppError extends Error {
         this.httpCode = HttpStatus.BAD_REQUEST;
         break
     }
-
-    console.log("app errr = ",this.httpCode)
+    console.log("APP Error = ",this.httpCode)
   }
 }
 
