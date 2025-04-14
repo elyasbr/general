@@ -23,13 +23,11 @@ export class AppExceptionFilter implements ExceptionFilter {
     const statusCode =<number>exception.httpCode
     console.log("status code = " , <number>exception.httpCode)
     if (statusCode==401) {
-      console.log("401")
       response.status(<number>exception.httpCode).send({
         statusCode :  <number>exception.httpCode ,
         timestamp: new Date().toISOString(),
       });
     } else  {
-      console.log("901")
       response.status(<number>exception.httpCode).send({
         statusCode :  <number>exception.httpCode ,
         message : JSON.parse(exception.message),
