@@ -12,19 +12,19 @@ export class CqrsFactory<T > {
   }
 
 
-  public   createCommand( data: any) :ICommand {
-    return (this.commandFactory as any).createCommand(data)
+  public   createCommand( data: any,userId? : string) :ICommand {
+    return (this.commandFactory as any).createCommand(data, userId)
   }
 
-  public   updateCommand( ID : string ,data: any) :ICommand {
-    return (this.commandFactory as any).updateCommand(ID ,data)
+  public   updateCommand( ID : string ,data: any , userId? : string) :ICommand {
+    return (this.commandFactory as any).updateCommand(ID ,data , userId)
   }
-  public   deleteCommand( ID: string) :ICommand {
-    return (this.commandFactory as any).deleteCommand(ID)
+  public   deleteCommand( ID: string , userId? : string) :ICommand {
+    return (this.commandFactory as any).deleteCommand(ID , userId)
   }
 
-  public   getQuery( ID: string) :IQuery {
-    return (this.commandFactory as any).getQuery(ID)
+  public   getQuery( ID: string , userId? : string) :IQuery {
+    return (this.commandFactory as any).getQuery(ID , userId)
   }
 
   public   paginationQuery( data: any) :IQuery {
