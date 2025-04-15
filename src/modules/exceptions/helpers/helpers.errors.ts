@@ -54,3 +54,4 @@ export function EPatternUUIDWrong(field : string ,section:string): string {
 export function ENestedSubClass(field : string ,section:string): string {
   return `${field}_FIELD_${section}_IS_NEED_NESTED_OBJECT`
 }
+
