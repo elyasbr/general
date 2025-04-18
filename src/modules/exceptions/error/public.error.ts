@@ -20,8 +20,10 @@ const PublicErrorKeys = Object.freeze({
   PATTERN_UUID_WRONG : "PATTER_UUID_IS_WRONG" ,
   TIME_STAMPS_PUBLIC_VALIDATE : EFieldValidate("TIME_STAMPS" , section),
   PATTERN_USER_ID_WRONG: EPatternUUIDWrong("USER_ID" , section) ,
-  STATUS_ACTION_REQUIRED : EEnumRequired("STATS" , section) ,
-  STATUS_ACTION_EMPTY : EStringEmpty("STATS" , section)
+  STATUS_ACTION_REQUIRED : EEnumRequired("STATUS" , section) ,
+  STATUS_ACTION_EMPTY : EStringEmpty("STATUS" , section) ,
+  STATUS_ACTION_VALIDATE : EFieldValidate("STATUS" , section) ,
+
 } as const);
 
 // ایجاد نوع برای کلیدهای شیء MimeTypeErrorKeys
