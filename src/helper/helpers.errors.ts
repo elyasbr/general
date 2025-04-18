@@ -69,3 +69,7 @@ export function EItemNotFound(field:string ,section:string): string {
 export function EFieldMoreThanValidate(field1 : string , field2 : string  ) {
   return `${field1}_CAN_NOT_MORE_THAN_${field2}`
 }
+
+export function EEnumRequired(filed: string , section:string): string {
+  return `${filed}_FIELD_${section}_IS_ENUM_REQUIRED`
+}

@@ -1,6 +1,12 @@
 import { IItemError } from '../interface/item-error.interface';
-import { ENumberRequired, EPatternUUIDWrong, EStringRequired } from '../helpers/helpers.errors';
-import { EFieldValidate } from '../../../helper';
+import {
+  EEnumRequired,
+  ENumberRequired,
+  EPatternUUIDWrong,
+  EStringEmpty,
+
+  EFieldValidate ,
+} from '../../../helper';
 
 const section = "PUBLIC";
 
@@ -13,7 +19,9 @@ const PublicErrorKeys = Object.freeze({
   PATTERN_FILTER_CONTAIN_PATTERN :  "FILTER_FILED_PAGINATION_SHOULD_BE_CONTAIN_PATTERN" ,
   PATTERN_UUID_WRONG : "PATTER_UUID_IS_WRONG" ,
   TIME_STAMPS_PUBLIC_VALIDATE : EFieldValidate("TIME_STAMPS" , section),
-  PATTERN_USER_ID_WRONG: EPatternUUIDWrong("USER_ID" , section)
+  PATTERN_USER_ID_WRONG: EPatternUUIDWrong("USER_ID" , section) ,
+  STATUS_ACTION_REQUIRED : EEnumRequired("STATS" , section) ,
+  STATUS_ACTION_EMPTY : EStringEmpty("STATS" , section)
 } as const);
 
 // ایجاد نوع برای کلیدهای شیء MimeTypeErrorKeys
