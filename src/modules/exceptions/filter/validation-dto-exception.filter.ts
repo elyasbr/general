@@ -16,6 +16,8 @@ export class ValidationDtoExceptionFilter implements ExceptionFilter {
     const ctx = host.switchToHttp();
     const status = exception.getStatus();
     const response = ctx.getResponse<FastifyReply>();
+    console.log("BAd Request")
+    console.log(exception.getResponse());
     response.status( status ).send({
       statusCode : HttpStatus.BAD_REQUEST,
       message : msg.map((item : string)=> {
