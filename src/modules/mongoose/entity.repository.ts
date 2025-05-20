@@ -90,7 +90,7 @@ export abstract class EntityRepository<
     options?: DeleteOptions,
   ): Promise<DeleteResult > {
     const filter = entityFilterQuery || {};
-      return this.entityModelRead.deleteMany(filter, options);
+      return this.entityModelWrite.deleteMany(filter, options);
   }
   protected async startSession(): Promise<ClientSession> {
     const session = await this.entityModelWrite.db.startSession();
