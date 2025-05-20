@@ -1,5 +1,5 @@
 import {
-  ClientSession,
+  ClientSession, DeleteResult,
   FilterQuery,
   Model,
   ProjectionType,
@@ -10,6 +10,7 @@ import {
 import { AggregateRoot } from '@nestjs/cqrs';
 import { Base } from './base-schema';
 import { EntitySchemaFactory } from './entity-schema.factory';
+import { DeleteOptions } from 'mongodb';
 
 export abstract class EntityRepository<
   TGet ,
@@ -84,6 +85,13 @@ export abstract class EntityRepository<
 
   }
 
+  protected async deleteMany(
+    entityFilterQuery?: FilterQuery<TSchemaWrite>,
+    options?: DeleteOptions,
+  ): Promise<DeleteResult > {
+    const filter = entityFilterQuery || {};
+      return this.entityModelRead.deleteMany(filter, options);
+  }
   protected async startSession(): Promise<ClientSession> {
     const session = await this.entityModelWrite.db.startSession();
     session.startTransaction(); // آغاز تراکنش
