@@ -1,8 +1,9 @@
-import { ClientSession, FilterQuery, ProjectionType, QueryOptions, UpdateQuery } from 'mongoose';
+import { ClientSession, DeleteResult, FilterQuery, ProjectionType, QueryOptions, UpdateQuery } from 'mongoose';
 import { EntityRepository } from './entity.repository';
 import { Base } from './base-schema';
 import { IPaginate } from './interface/paginate-interface';
 import { PaginateDto } from '../../dtos';
+import { DeleteOptions } from 'mongodb';
 
 export abstract class BaseEntityRepository<
   TGet ,
@@ -41,6 +42,11 @@ export abstract class BaseEntityRepository<
                       update: UpdateQuery<TSchemaWrite>,
                       options?: QueryOptions<TSchemaWrite>,):  Promise<TEntity | null> {
     return await this.findOneAndUpdate(entityFilterQuery, update, options)
+  }
+
+  async deleteAll(   entityFilterQuery: FilterQuery<TSchemaWrite>,
+                        options?: DeleteOptions):  Promise<DeleteResult> {
+    return await this.deleteMany(entityFilterQuery,options)
   }
 
   async getArrayWithPage(  page :number , limit :number ,
