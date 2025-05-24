@@ -17,7 +17,7 @@ export class CqrsFactory<T > {
     return (this.commandFactory as any).createCommand(data ,user)
   }
 
-  public   updateCommand( ID : string ,data: any , userId? : string , user? :GetUserDto) :ICommand {
+  public   updateCommand( ID : string ,data: any ,  user? :GetUserDto) :ICommand {
     return (this.commandFactory as any).updateCommand(ID ,data  , user)
   }
   public   deleteCommand( ID: string ,   user? :GetUserDto) :ICommand {
