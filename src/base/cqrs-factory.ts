@@ -13,19 +13,19 @@ export class CqrsFactory<T > {
   }
 
 
-  public   createCommand( data: any,userId? : string , user? :GetUserDto) :ICommand {
-    return (this.commandFactory as any).createCommand(data, userId ,user)
+  public   createCommand( data: any,user? :GetUserDto) :ICommand {
+    return (this.commandFactory as any).createCommand(data ,user)
   }
 
   public   updateCommand( ID : string ,data: any , userId? : string , user? :GetUserDto) :ICommand {
-    return (this.commandFactory as any).updateCommand(ID ,data , userId , user)
+    return (this.commandFactory as any).updateCommand(ID ,data  , user)
   }
-  public   deleteCommand( ID: string , userId? : string ,  user? :GetUserDto) :ICommand {
-    return (this.commandFactory as any).deleteCommand(ID , userId , user)
+  public   deleteCommand( ID: string ,   user? :GetUserDto) :ICommand {
+    return (this.commandFactory as any).deleteCommand(ID  , user)
   }
 
-  public   getQuery( ID: string , userId? : string ,  user? :GetUserDto) :IQuery {
-    return (this.commandFactory as any).getQuery(ID , userId , user)
+  public   getQuery( ID: string ,   user? :GetUserDto) :IQuery {
+    return (this.commandFactory as any).getQuery(ID  , user)
   }
 
   public   paginationQuery( data: any ,  user? :GetUserDto) :IQuery {
@@ -34,6 +34,6 @@ export class CqrsFactory<T > {
   }
   public   paginationFromParentQuery( parentId :string ,data: any ,  user? :GetUserDto) :IQuery {
     const {page , limit , filter , sort } = data
-    return (this.commandFactory as any).paginationFromParentQuery(parentId ,page , limit , filter , sort )
+    return (this.commandFactory as any).paginationFromParentQuery(parentId ,page , limit , filter , sort , user )
   }
 }
