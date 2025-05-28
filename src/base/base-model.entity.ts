@@ -7,7 +7,7 @@ export  class BaseModelEntity<T > {
    private _id: string
    private _createdAt :Date
    private _updatedAt:Date
-   private _deletedAt:Date
+   private _deletedAt:Date | undefined
 
   constructor(properties :T) {
     this.properties = properties;
@@ -46,11 +46,12 @@ export  class BaseModelEntity<T > {
     this._updatedAt = value;
   }
 
-  get deletedAt(): Date {
+
+  get deletedAt(): Date | undefined {
     return this._deletedAt;
   }
 
-  set deletedAt(value: Date) {
+  set deletedAt(value: Date | undefined) {
     this._deletedAt = value;
   }
 }
