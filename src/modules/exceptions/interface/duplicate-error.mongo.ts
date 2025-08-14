@@ -1,5 +1,5 @@
 export interface IDuplicateMongo {
 
-  handler(message : string):void;
+  handler(message : string):any;
 
 }
