@@ -1,5 +1,6 @@
 import { DynamicModule, Module, Provider } from '@nestjs/common';
 import { ThrowService } from './throw.service';
+import { ThrowRpcService } from './throw-rpc.service';
 
 @Module({})
 export class ThrowModule {
@@ -10,7 +11,7 @@ export class ThrowModule {
     };
     return {
       module: ThrowModule,
-      providers: [provider , ThrowService],
+      providers: [provider , ThrowService , ThrowRpcService],
       exports: [ThrowService  ]
     };
   }
@@ -18,7 +19,7 @@ export class ThrowModule {
 
     return {
       module: ThrowModule,
-      providers: [ ThrowService],
+      providers: [ ThrowService , ThrowRpcService],
       exports: [ThrowService  ]
     };
   }
