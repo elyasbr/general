@@ -12,7 +12,7 @@ export class ThrowModule {
     return {
       module: ThrowModule,
       providers: [provider , ThrowService , ThrowRpcService],
-      exports: [ThrowService  ]
+      exports: [ThrowService ,ThrowRpcService ]
     };
   }
   static forStandard(): DynamicModule {
