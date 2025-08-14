@@ -1,20 +1,14 @@
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { ApiHideProperty, ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { EStatusAction } from '../../enums';
 
 export class BaseResponse {
 
-  @ApiProperty({
-    type :Date
-  })
+  @ApiHideProperty()
   createdAt : Date
 
-  @ApiProperty({
-    type :Date
-  })
+  @ApiHideProperty()
   updatedAt : Date
 
-  @ApiProperty({
-    enum : EStatusAction
-  })
+  @ApiHideProperty()
   status : EStatusAction
 }
