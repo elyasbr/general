@@ -5,10 +5,10 @@ import { GetUserDto } from '../dtos';
 export abstract  class   BaseCommandFactory<TCreateDto , TUpdateDto , TFilter , TSort> {
   abstract createCommand( data : TCreateDto ,   user? : GetUserDto) : ICommand
   abstract updateCommand( ID : string ,data : TUpdateDto  , user? : GetUserDto) : ICommand
-  abstract deleteCommand(ID : string ,   user? : GetUserDto) :ICommand
-  abstract getQuery(ID : string  ,  user? : GetUserDto) :IQuery
-  abstract paginationQuery(page : number , limit : number , filter :TFilter , sort : TSort , user? : GetUserDto) :IQuery | undefined
-  abstract paginationFromParentQuery(parentId : string ,page : number , limit : number , filter :TFilter , sort : TSort ,user? : GetUserDto) :IQuery | undefined
+  abstract deleteCommand(ID : string ,   user? : GetUserDto | undefined , jwt? :string ) :ICommand
+  abstract getQuery(ID : string  ,  user? : GetUserDto | undefined , jwt? :string) :IQuery
+  abstract paginationQuery(page : number , limit : number , filter :TFilter , sort : TSort , user? : GetUserDto ,  jwt? :string ) :IQuery | undefined
+  abstract paginationFromParentQuery(parentId : string ,page : number , limit : number , filter :TFilter , sort : TSort ,user? : GetUserDto , jwt? :string ) :IQuery | undefined
 
 
 
