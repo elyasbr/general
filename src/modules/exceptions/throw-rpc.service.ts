@@ -18,6 +18,6 @@ export class ThrowRpcService {
       const msg1: MongoServerError = <MongoServerError>msg;
       if (msg1.code == 11000) this.secondService.handler(msg1.message);
     }
-    throw new RpcException(new AppError(msg.message, TypeErrorCode.Error_DISABLE));
+    throw new RpcException(new AppError(msg.message, TypeErrorCode.ForBIDDEN));
   }
 }
