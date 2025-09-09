@@ -32,7 +32,6 @@ export class RmqModule {
                 noAck :false ,
                 queueOptions: {
                   durable: true,
-                persistent: true
                 },
               },
 
