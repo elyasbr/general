@@ -29,7 +29,7 @@ export class RmqModule {
                 urls: [`amqp://${configService.get("USER_RABBITMQ")}:${configService.get("PASSWORD_RABBITMQ")}@${configService.get("HOST_RABBITMQ") || '127.0.0.1'}:${configService.get("PORT_RABBITMQ")}`],
                 queue:  `RABBIT_MQ_${name}_QUEUE` ,
                 prefetchCount: 1 ,
-                no :false ,
+                noAck :false ,
                 queueOptions: {
                   durable: true,
                 },
